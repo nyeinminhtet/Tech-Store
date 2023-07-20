@@ -5,7 +5,7 @@ let stripePromise;
 
 const getStripe = () => {
   if (!stripePromise) {
-    stripePromise = loadStripe(config.stripeKey);
+    stripePromise = loadStripe(config.stripePublishableKey);
   }
 
   return stripePromise;

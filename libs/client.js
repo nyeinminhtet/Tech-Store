@@ -1,4 +1,4 @@
-import { config } from "@/config";
+import { config } from "../config";
 import sanityClient from "@sanity/client";
 import imageUrlBuilder from "@sanity/image-url";
 

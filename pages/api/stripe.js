@@ -1,4 +1,4 @@
-import { config } from "@/config";
+import { config } from "../../config";
 import Stripe from "stripe";
 
 const stripe = new Stripe(config.stripeSecret);

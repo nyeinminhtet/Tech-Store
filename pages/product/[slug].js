@@ -1,13 +1,13 @@
-import React, { useContext, useEffect, useState } from "react";
-import { client, urlFor } from "@/libs/client";
-import { Product } from "@/components";
+import React, { useState } from "react";
+import { client, urlFor } from "../../libs/client";
+import { Product } from "../../components";
 import {
   AiOutlineMinus,
   AiOutlinePlus,
   AiFillStar,
   AiOutlineStar,
 } from "react-icons/ai";
-import { useStateContext } from "@/context/StateContext";
+import { useStateContext } from "../../context/StateContext";
 
 const ProductDetail = ({ product, products }) => {
   const { name, price, image, details } = product;

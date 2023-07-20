@@ -1,4 +1,4 @@
-import { config } from "@/config";
+import { config } from "../config";
 import { loadStripe } from "@stripe/stripe-js";
 
 let stripePromise;

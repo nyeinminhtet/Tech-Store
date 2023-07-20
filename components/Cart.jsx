@@ -12,6 +12,7 @@ import { toast } from "react-hot-toast";
 import { useStateContext } from "../context/StateContext";
 import { urlFor } from "../libs/client";
 import getStripe from "../libs/getStripe";
+import { config } from "../config";
 
 const Cart = () => {
   const cartRef = useRef();
@@ -30,7 +31,10 @@ const Cart = () => {
 
     const response = await fetch("/api/stripe", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: {
+        Authorization: `Bearer ${config.stripeSecret}`,
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(cartItems),
     });
 

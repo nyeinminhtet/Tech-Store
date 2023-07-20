@@ -1,7 +1,7 @@
 import { config } from "../../config";
 import Stripe from "stripe";
 
-const stripe = new Stripe(config.stripeKey);
+const stripe = new Stripe(config.stripeSecret);
 
 export default async function handler(req, res) {
   if (req.method === "POST") {

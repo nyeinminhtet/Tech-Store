@@ -32,7 +32,6 @@ const Cart = () => {
     const response = await fetch("/api/stripe", {
       method: "POST",
       headers: {
-        Authorization: `Bearer ${config.stripeSecret}`,
         "Content-Type": "application/json",
       },
       body: JSON.stringify(cartItems),

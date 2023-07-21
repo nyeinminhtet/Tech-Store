@@ -15,7 +15,6 @@ import getStripe from "../libs/getStripe";
 import { config } from "../config";
 
 const Cart = () => {
-  const cartRef = useRef();
   const {
     totalPrice,
     totalQuantities,
@@ -46,7 +45,7 @@ const Cart = () => {
   };
 
   return (
-    <div className="cart-wrapper" ref={cartRef}>
+    <div className="cart-wrapper">
       <div className="cart-container">
         <button
           type="button"
@@ -75,52 +74,54 @@ const Cart = () => {
         )}
 
         {/* products */}
-        {cartItems.length >= 1 &&
-          cartItems.map((cartItem, i) => (
-            <div className="product" key={i}>
-              <img
-                src={urlFor(cartItem?.image[0])}
-                className="cart-product-image"
-              />
-              <div className="item-desc">
-                <div className="flex top">
-                  <h5>{cartItem.name}</h5>
-                  <h4>${cartItem.price}</h4>
-                </div>
-                <div className="flex botton">
-                  <div>
-                    <p className="quantity-desc">
-                      <span
-                        className="minus"
-                        onClick={() =>
-                          toggleCartItemQuantity(cartItem._id, "dec")
-                        }
-                      >
-                        <AiOutlineMinus />
-                      </span>
-                      <span className="num">{cartItem.quantity}</span>
-                      <span
-                        className="plus"
-                        onClick={() =>
-                          toggleCartItemQuantity(cartItem._id, "inc")
-                        }
-                      >
-                        <AiOutlinePlus />
-                      </span>
-                    </p>
+        <div className="cart-product-container">
+          {cartItems.length >= 1 &&
+            cartItems.map((cartItem, i) => (
+              <div className="product" key={i}>
+                <img
+                  src={urlFor(cartItem?.image[0])}
+                  className="cart-product-image"
+                />
+                <div className="item-desc">
+                  <div className="flex top">
+                    <h5>{cartItem.name}</h5>
+                    <h4>${cartItem.price}</h4>
                   </div>
+                  <div className="flex botton">
+                    <div>
+                      <p className="quantity-desc">
+                        <span
+                          className="minus"
+                          onClick={() =>
+                            toggleCartItemQuantity(cartItem._id, "dec")
+                          }
+                        >
+                          <AiOutlineMinus />
+                        </span>
+                        <span className="num">{cartItem.quantity}</span>
+                        <span
+                          className="plus"
+                          onClick={() =>
+                            toggleCartItemQuantity(cartItem._id, "inc")
+                          }
+                        >
+                          <AiOutlinePlus />
+                        </span>
+                      </p>
+                    </div>
 
-                  <button
-                    className="remove-item"
-                    type="button"
-                    onClick={() => removeItem(cartItem)}
-                  >
-                    <TiDeleteOutline />
-                  </button>
+                    <button
+                      className="remove-item"
+                      type="button"
+                      onClick={() => removeItem(cartItem)}
+                    >
+                      <TiDeleteOutline />
+                    </button>
+                  </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+        </div>
 
         {cartItems.length >= 1 && (
           <div className="cart-bottom">

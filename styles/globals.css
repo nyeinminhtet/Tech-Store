@@ -69,7 +69,9 @@ span.text-red {
 }
 .logo {
   color: gray;
+  display: flex;
   font-size: 18px;
+  text-align: center;
 }
 .cart-icon {
   font-size: 25px;
@@ -268,12 +270,12 @@ span.text-red {
   right: 0;
   top: 0;
   z-index: 100;
-  /* will-change: transform; */
   transition: all 1s ease-in-out;
 }
+
 .cart-container {
-  height: 100vh;
   width: 600px;
+  height: 100vh;
   background-color: white;
   float: right;
   padding: 40px 10px;
@@ -333,14 +335,21 @@ span.text-red {
   max-height: 70vh;
   padding: 20px 10px;
 }
+.cart-product-container {
+  height: 350px;
+  margin-top: 10px;
+  overflow-y: scroll;
+  border-bottom: 2px solid white;
+}
 .product {
   display: flex;
   gap: 30px;
-  padding: 20px;
+  padding: 10px;
+  border-bottom: 1px solid black;
 }
 .product .cart-product-image {
-  width: 180px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 15px;
   background-color: #ebebeb;
 }
@@ -374,11 +383,10 @@ span.text-red {
   border: none;
 }
 .cart-bottom {
-  position: absolute;
-  bottom: 12px;
-  right: 5px;
   width: 100%;
-  padding: 30px 65px;
+  padding: 10px 65px;
+  margin-top: 10px;
+  background-color: white;
 }
 
 .btn-container {
@@ -394,6 +402,7 @@ span.text-red {
   font-size: 20px;
   margin-top: 10px;
   margin-top: 40px;
+  margin-left: 20px;
   text-transform: uppercase;
   background-color: #f02d34;
   color: #fff;
@@ -535,7 +544,7 @@ span.text-red {
 }
 
 .maylike-products-wrapper {
-  margin-top: 120px;
+  margin-top: 50px;
 }
 .maylike-products-wrapper h2 {
   text-align: center;
@@ -610,7 +619,7 @@ span.text-red {
 
 @media screen and (max-width: 800px) {
   .hero-banner-container {
-    height: 560px;
+    height: 520px;
   }
   .hero-banner-image {
     width: 57%;
@@ -676,7 +685,6 @@ span.text-red {
   .cart-container {
     width: 415px;
     padding: 4px;
-    height: 520px;
   }
   .cart-heading {
     margin-top: 35px;
@@ -685,6 +693,7 @@ span.text-red {
   .product-container {
     margin-top: 10px;
   }
+
   .product {
     padding: 20px 5px;
     margin-left: 35px;
@@ -722,7 +731,8 @@ span.text-red {
     color: black;
   }
   .cart-bottom {
-    padding: 30px;
+    padding: 10px;
+    padding-bottom: 50px;
   }
 
   .total h3 {

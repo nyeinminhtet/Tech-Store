@@ -676,6 +676,7 @@ span.text-red {
   .cart-container {
     width: 415px;
     padding: 4px;
+    height: 520px;
   }
   .cart-heading {
     margin-top: 35px;
